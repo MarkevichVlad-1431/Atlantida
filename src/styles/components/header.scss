@@ -3,6 +3,7 @@
 .slider {
     position: relative;
     height: 100vh;
+    max-height: 100vh;
 
     background-image: url('./../assets/images/bg_Slider_1.png');
     background-position: center;
@@ -73,13 +74,13 @@
                 }
 
                 ul {
-
                     @media screen and (max-width: 769px) {
                         display: none;
                     }
                     li {
                         display: inline-block;
                         margin-right: 10px;
+                        height: min-content;
 
                         @media screen and (max-width: 769px) {
                             
@@ -103,7 +104,7 @@
                             }
 
                             @media screen and (max-width: 769px) {
-                                font-size: 24px;
+                                font-size: 18px;
                             }
                         }
                     }
