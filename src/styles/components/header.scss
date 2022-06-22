@@ -1,3 +1,63 @@
-h1{
-    color: red
+.slider{
+    position: relative;
+    height: 100vh;
+
+    background-image: url('./../assets/images/bg_Slider_1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    header{
+        padding: 16px 0;
+        display: grid;
+        justify-content: center;
+
+        background-color: #fff;
+
+        .header{
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: max-content max-content max-content;
+            align-items: center;
+
+            .header__logo{}
+
+            .header__nav{
+                display: grid;
+                grid-template-columns: max-content max-content;
+                align-self: center;
+
+                ul{
+
+                    li{
+                        display: inline-block;
+                        margin-right: 10px;
+
+                        a{
+                            font-size: 12px;
+                            text-decoration: none;  
+                            text-transform: uppercase;
+
+                            font-family: Montserrat Regular, serif;
+                        }
+                    }
+                }
+
+                .mobileMenu{
+                    width: 20px;
+                    height: 20px;
+
+                    hr{
+                        margin-bottom: 2.5px;
+                    }
+                }
+            }
+        }
+        
+    }
+
+}
+
+.hidden{
+    display: none;
 }
