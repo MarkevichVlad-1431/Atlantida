@@ -1,3 +1,5 @@
+@use './../helpers/extends.scss';
+
 .slider{
     position: relative;
     height: 100vh;
@@ -24,22 +26,58 @@
                 grid-template-columns: max-content max-content;
             }
 
-            .header__logo{}
+            .header__logo{
+                @media screen and (max-width: 992px) {
+                   position: relative;
+                   z-index: 100;
+                }
+            }
 
             .header__nav{
                 display: grid;
                 grid-template-columns: max-content max-content;
                 align-self: center;
 
-                ul{
-                    @media screen and (max-width: 769px) {
+                @media screen and (max-width: 769px) {
+                    .hidden{
                         display: none;
                     }
+                    .openMenu{
+                        position: absolute;
+
+                        animation-duration: 1s;
+                        animation-name: openMenu;
+
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        z-index: 2;
+
+                        display: grid;
+                        align-items: center;
+                        max-height: min-content;
+                        min-height: 100vh;
+                        padding-left: 15px;
+                        padding-top: 60px;      
+
+                        background-color: #fff;
+                    }
+                }
+
+                ul{
                     li{
                         display: inline-block;
                         margin-right: 10px;
 
-                        @media screen and (max-width: 769px) {}
+                        @media screen and (max-width: 769px) {
+                            padding: 5px;
+                            border: 1px solid #000;
+                            border-radius: 10px;
+
+                            animation-duration: 1.5s;
+                            animation-name: showTextNav;
+                            opacity: 1;
+                        }
 
                         a{
                             font-size: 12px;
@@ -47,8 +85,12 @@
                             text-transform: uppercase;
 
                             font-family: Montserrat Regular, serif;
+                            &:hover{
+                                color: red;
+                            }
                         }
                     }
+
                 }
 
                 .mobileMenu{
@@ -58,6 +100,8 @@
 
                     @media screen and (max-width: 769px) {
                         display: block;
+                        position: relative;
+                        z-index: 10;
                     }
 
                     hr{
@@ -74,8 +118,4 @@
         
     }
 
-}
-
-.hidden{
-    display: none;
 }

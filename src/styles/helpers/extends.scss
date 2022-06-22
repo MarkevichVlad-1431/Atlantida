@@ -1,0 +1,32 @@
+@keyframes openMenu {
+    0% {
+      bottom: 90%;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes closeMenu {
+    0% {
+      bottom: 0;
+    }
+
+    100% {
+        bottom: 90%;
+    }
+}
+
+@keyframes showTextNav {
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
