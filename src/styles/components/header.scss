@@ -1,6 +1,6 @@
 @use './../helpers/extends.scss';
 
-.slider{
+.slider {
     position: relative;
     height: 100vh;
 
@@ -9,14 +9,14 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    header{
+    header {
         padding: 16px 0;
         display: grid;
         justify-content: center;
 
         background-color: #fff;
 
-        .header{
+        .header {
             display: grid;
             justify-content: space-between;
             grid-template-columns: max-content max-content max-content;
@@ -26,23 +26,21 @@
                 grid-template-columns: max-content max-content;
             }
 
-            .header__logo{
+            .header__logo {
                 @media screen and (max-width: 992px) {
-                   position: relative;
-                   z-index: 100;
+                    position: relative;
+                    z-index: 100;
                 }
             }
 
-            .header__nav{
+            .header__nav {
                 display: grid;
                 grid-template-columns: max-content max-content;
                 align-self: center;
 
-                @media screen and (max-width: 769px) {
-                    .hidden{
-                        display: none;
-                    }
-                    .openMenu{
+                @media screen and (max-width: 769px) {                   
+
+                    .openMenu {
                         position: absolute;
 
                         animation-duration: 1s;
@@ -58,34 +56,49 @@
                         max-height: min-content;
                         min-height: 100vh;
                         padding-left: 15px;
-                        padding-top: 60px;      
+                        padding-top: 60px;
 
                         background-color: #fff;
                     }
+                    .closeMenu{
+                        position: relative;
+                        top: o;
+                        left: 0;
+                        right: 0;
+                        z-index: 2;
+
+                        animation-duration: 1s;
+                        animation-name: closeMenu;
+                    }
                 }
 
-                ul{
-                    li{
+                ul {
+
+                    @media screen and (max-width: 769px) {
+                        display: none;
+                    }
+                    li {
                         display: inline-block;
                         margin-right: 10px;
 
                         @media screen and (max-width: 769px) {
+                            
                             padding: 5px;
-                            border: 1px solid #000;
-                            border-radius: 10px;
 
                             animation-duration: 1.5s;
                             animation-name: showTextNav;
                             opacity: 1;
+                            
                         }
 
-                        a{
+                        a {
                             font-size: 12px;
-                            text-decoration: none;  
+                            text-decoration: none;
                             text-transform: uppercase;
 
                             font-family: Montserrat Regular, serif;
-                            &:hover{
+
+                            &:hover {
                                 color: red;
                             }
                         }
@@ -93,7 +106,7 @@
 
                 }
 
-                .mobileMenu{
+                .mobileMenuClose {
                     width: 20px;
                     height: 20px;
                     display: none;
@@ -104,18 +117,44 @@
                         z-index: 10;
                     }
 
-                    hr{
+                    hr {
                         margin-bottom: 2.5px;
                     }
                 }
+
+                .mobileMenuOpen{
+                    width: 20px;
+                    height: 20px;
+                    display: none;
+
+                    @media screen and (max-width: 769px) {
+                        display: block;
+                        position: relative;
+                        z-index: 10;
+                    }
+
+                    hr {
+                        &:first-child{
+                           transform:translate(0px, 3px) rotate(45deg);
+                        }
+
+                        &:last-child{
+                            transform:translate(0px, 0px) rotate(135deg);
+                        }
+                    }
+                    .mide{
+                        display: none;
+                    }
+                }
             }
-            .header__links{
+
+            .header__links {
                 @media screen and (max-width: 992px) {
                     display: none;
                 }
             }
         }
-        
+
     }
 
 }
