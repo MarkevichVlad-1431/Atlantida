@@ -20,6 +20,10 @@
             grid-template-columns: max-content max-content max-content;
             align-items: center;
 
+            @media screen and (max-width: 992px) {
+                grid-template-columns: max-content max-content;
+            }
+
             .header__logo{}
 
             .header__nav{
@@ -28,10 +32,14 @@
                 align-self: center;
 
                 ul{
-
+                    @media screen and (max-width: 769px) {
+                        display: none;
+                    }
                     li{
                         display: inline-block;
                         margin-right: 10px;
+
+                        @media screen and (max-width: 769px) {}
 
                         a{
                             font-size: 12px;
@@ -46,10 +54,20 @@
                 .mobileMenu{
                     width: 20px;
                     height: 20px;
+                    display: none;
+
+                    @media screen and (max-width: 769px) {
+                        display: block;
+                    }
 
                     hr{
                         margin-bottom: 2.5px;
                     }
+                }
+            }
+            .header__links{
+                @media screen and (max-width: 992px) {
+                    display: none;
                 }
             }
         }
