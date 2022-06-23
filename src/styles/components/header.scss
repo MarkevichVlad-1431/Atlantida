@@ -1,9 +1,12 @@
-@use './../helpers/extends.scss';
+@import './../helpers/extends';
+@import './../helpers/global';
 
-.slider {
+.sliderBody {
     position: relative;
     height: 100vh;
     min-height: min-content;
+    display: grid;
+    grid-template-rows: min-content 1fr;
 
     background-image: url('./../assets/images/bg_Slider_1.png');
     background-position: center;
@@ -15,7 +18,8 @@
         display: grid;
         justify-content: center;
 
-        background-color: #fff;
+        background-color: $colorWhite;
+        color: $colorText;
 
         .header {
             display: grid;
@@ -39,7 +43,7 @@
                 grid-template-columns: max-content max-content;
                 align-self: center;
 
-                @media screen and (max-width: 769px) {                   
+                @media screen and (max-width: 769px) {
 
                     .openMenu {
                         position: absolute;
@@ -54,15 +58,16 @@
 
                         display: grid;
                         grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content;
-                        
+
                         align-items: center;
                         min-height: 100vh;
                         padding-left: 15px;
                         padding-top: 60px;
 
-                        background-color: #fff;
+                        background-color: $colorWhite;
                     }
-                    .closeMenu{
+
+                    .closeMenu {
                         position: relative;
                         top: o;
                         left: 0;
@@ -78,18 +83,19 @@
                     @media screen and (max-width: 769px) {
                         display: none;
                     }
+
                     li {
                         display: inline-block;
                         margin-right: 10px;
 
                         @media screen and (max-width: 769px) {
-                            
+
                             padding: 5px 10px;
 
                             animation-duration: 1.5s;
                             animation-name: showTextNav;
                             opacity: 1;
-                            
+
                         }
 
                         a {
@@ -98,6 +104,7 @@
                             text-transform: uppercase;
 
                             font-family: Montserrat Regular, serif;
+                            color: $colorText;
 
                             &:hover {
                                 color: red;
@@ -127,7 +134,7 @@
                     }
                 }
 
-                .mobileMenuOpen{
+                .mobileMenuOpen {
                     width: 20px;
                     height: 20px;
                     display: none;
@@ -139,21 +146,36 @@
                     }
 
                     hr {
-                        &:first-child{
-                           transform:translate(0px, 3px) rotate(45deg);
+                        &:first-child {
+                            transform: translate(0px, 3px) rotate(45deg);
                         }
 
-                        &:last-child{
-                            transform:translate(0px, 0px) rotate(135deg);
+                        &:last-child {
+                            transform: translate(0px, 0px) rotate(135deg);
                         }
                     }
-                    .mide{
+
+                    .mide {
                         display: none;
                     }
                 }
             }
 
             .header__links {
+
+                ul {
+                    li {
+                        display: inline-block;
+
+                        a {
+                            img {
+                                padding-right: 3px;
+                                border-right: 1px solid $colorText;
+                            }
+                        }
+                    }
+                }
+
                 @media screen and (max-width: 992px) {
                     display: none;
                 }
@@ -162,4 +184,118 @@
 
     }
 
+    .container {
+        display: grid;
+        align-items: center;
+
+        .slider {
+
+            display: grid;
+            align-items: center;
+            grid-template-columns: min-content auto min-content;
+            justify-content: space-between;
+
+            @media screen and (max-width: 769px) {
+                display: block;
+            }
+
+            .leftScroll {
+                display: grid;
+                align-items: center;
+                justify-items: center;
+                width: 36px;
+                height: 36px;
+                border-radius: 50px;
+
+                font-size: 24px;
+
+                background-color: $colorWhite;
+
+                @media screen and (max-width: 769px) {
+                    display: none;
+                }
+            }
+
+            .sliderText {
+                text-align: center;
+
+                .sliderText__tagline {
+                    font-size: 14px;
+                    font-family: CrimsonText Regular, sans-serif;
+                    line-height: 50px;
+
+                    color: $colorWhite;
+
+                    @media screen and (max-width: 769px) {
+                     line-height: 26px;   
+                    }
+                }
+
+                .sliderText__img {
+                    @media screen and (max-width: 769px) {
+                        width: 100%;
+                    }
+                }
+
+                .sliderText__title {
+                    font-size: 40px;
+                    text-transform: uppercase;
+                    letter-spacing: 5px;
+                    line-height: 100px;
+                    font-family: Amsdam, sans-serif;
+                    color: $colorWhite;
+
+                    @media screen and (max-width: 769px) {
+                     font-size: 20px;
+                     line-height: 40px;   
+                    }
+                }
+
+                .sliderText__start {
+                    position: relative;
+                    z-index: 1;
+                    margin-top: 40px;
+                    height: 45px;
+                    width: 145px;
+                    border: 3px solid $colorWhite;
+
+                    font-family: Montserrat Regular, serif;
+                    font-size: 15px;
+                    color: $colorWhite;
+
+                    img {
+                        position: absolute;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        bottom: -45px;
+
+                        z-index: 20;
+
+
+                    }
+                }
+            }
+
+            .rightScroll {
+                display: grid;
+                align-items: center;
+                justify-items: center;
+                width: 36px;
+                height: 36px;
+                border-radius: 50px;
+
+                font-size: 24px;
+
+                background-color: $colorWhite;
+
+                @media screen and (max-width: 769px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
 }
