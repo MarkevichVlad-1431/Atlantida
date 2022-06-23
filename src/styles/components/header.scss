@@ -3,7 +3,7 @@
 .slider {
     position: relative;
     height: 100vh;
-    max-height: 100vh;
+    min-height: min-content;
 
     background-image: url('./../assets/images/bg_Slider_1.png');
     background-position: center;
@@ -53,8 +53,9 @@
                         z-index: 2;
 
                         display: grid;
+                        grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content;
+                        
                         align-items: center;
-                        max-height: min-content;
                         min-height: 100vh;
                         padding-left: 15px;
                         padding-top: 60px;
@@ -80,11 +81,10 @@
                     li {
                         display: inline-block;
                         margin-right: 10px;
-                        height: min-content;
 
                         @media screen and (max-width: 769px) {
                             
-                            padding: 0px 10px;
+                            padding: 5px 10px;
 
                             animation-duration: 1.5s;
                             animation-name: showTextNav;
