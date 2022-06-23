@@ -3,8 +3,8 @@
 
 .sliderBody {
     position: relative;
-    height: 100vh;
-    min-height: min-content;
+    // height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-rows: min-content 1fr;
 

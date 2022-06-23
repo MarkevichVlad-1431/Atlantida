@@ -1,0 +1,92 @@
+@import './../helpers/extends';
+@import './../helpers/global';
+
+main {
+    background-color: $colorMainBg;
+    padding: 75px 0;
+
+    @media screen and (max-width: 769px) {
+        padding: 15px 0;
+    }
+
+    #aboutUs {
+        background-color: $colorWhite;
+
+        .aboutUs__img {
+            height: 320px;
+            width: 100%;
+            background: url(./../assets/images/img_aboutUs.png);
+
+            @media screen and (max-width: 769px) {
+                height: 150px;
+            }
+        }
+
+        .aboutUs__title {
+            margin-top: 60px;
+
+            font-size: 20px;
+            text-align: center;
+            font-family: Amsdam, sans-serif;
+            text-transform: uppercase;
+            color: $aboutTextColor;
+
+            @media screen and (max-width: 769px) {
+                margin-top: 20px;
+                font-size: 16px;
+            }
+        }
+
+        .aboutUs__line {
+            text-align: center;
+            margin: 25px auto 35px auto;
+
+            @media screen and (max-width: 769px) {
+                margin: 5px 15px;
+            }
+        }
+
+        .aboutUs__text {
+            padding: 0 60px;
+
+            font-size: 14px;
+            line-height: 25px;
+            font-family: CrimsonText Regular, sans-serif;
+
+            color: $aboutTextColor;
+
+            @media screen and (max-width: 769px) {
+                padding: 0 10px;
+                
+                font-size: 10px;
+                line-height: 18px;
+            }
+        }
+
+        .aboutUs__buttons {
+            text-align: center;
+
+            button {
+                margin: 50px 0;
+                margin-right: 5px;
+                padding: 15px 30px;
+                border: 2px solid $aboutTextColor;
+                font-size: 13px;
+                font-family: Montserrat Regular, sans-serif;
+
+                color: #000;
+
+                @media screen and (max-width: 769px) {
+                    margin: 10px 0;
+                    padding: 5px 10px;
+                }
+
+                &:hover {
+                    background-color: $aboutTextColor;
+
+                    color: $colorWhite;
+                }
+            }
+        }
+    }
+}
