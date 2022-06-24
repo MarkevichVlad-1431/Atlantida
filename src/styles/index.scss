@@ -1,7 +1,8 @@
 // @use './helpers/global';
 @use './helpers/fonts';
 @use './helpers/normalize.scss';
+@use './helpers/extends';
 
 @use './components/header.scss';
 @use './components/aboutUs.scss';
-
+@use './components/services.scss';

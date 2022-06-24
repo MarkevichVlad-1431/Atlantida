@@ -1,3 +1,7 @@
+@import './../helpers/fonts';
+@import './../helpers/global';
+
+
 @keyframes openMenu {
     0% {
       bottom: 90%;
@@ -28,5 +32,39 @@
     }
     100%{
         opacity: 1;
+    }
+}
+
+
+.setviceBodyStyle{
+    margin-top: 60px;
+    padding: 50px 30px;
+    max-width: 270px;
+    height: 410px;
+
+    color: $colorWhite;
+
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    @media screen and (max-width: 1200px) {
+        margin-top: 20px;
+    }
+
+    .serviceBody__title{
+        margin-bottom: 25px;
+
+        font-size: 13px;
+        color: $colorServices;
+        text-transform: uppercase;
+        font-family: Montserrat Regular, sans-serif;
+    }
+
+    .serviceBody__text{
+        font-size: 14px;
+        letter-spacing: 2px;
+        color: $colorServices;
+        font-family: CrimsonText Regular;
+
     }
 }

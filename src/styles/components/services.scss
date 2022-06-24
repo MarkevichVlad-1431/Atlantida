@@ -1,0 +1,83 @@
+@import './../helpers/extends';
+@import './../helpers/global';
+@import './../helpers/fonts';
+
+.services {
+    padding: 60px 0 80px 0;
+
+    text-align: center;
+
+    background-image: url(./../assets/images/bg_services.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    @media screen and (max-width: 769px) {
+        padding: 15px 0 20px 0;
+    }
+    
+    .services__title {
+        font-size: 20px;
+        letter-spacing: 3px;
+        color: $colorWhite;
+        font-family: Amsdam, sans-serif;
+    }
+
+    .services__line {
+        margin: 25px 0 35px 0;
+
+        @media screen and (max-width: 769px) {
+            margin: 10px 0 10px 0;
+        }
+    }
+
+    .services__tagline {
+        margin: 0 auto;
+        width: 80%;
+
+        font-size: 14px;
+        color: $colorWhite;
+
+        font-family: CrimsonText Regular;
+        
+        @media screen and (max-width: 769px) {
+            font-size: 10px;
+        }
+    }
+
+    .services__reguets {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        @media screen and (max-width: 1200px) {
+            grid-template-columns: 1fr 1fr;
+            justify-self: center;
+            justify-items: center;
+        }
+
+        @media screen and (max-width: 769px) {
+            grid-template-columns: 1fr;
+        }
+
+        .serviceBody_1 {
+            @extend .setviceBodyStyle;
+            background-image: url(./../assets/images/bg_blok1.png);
+        }
+
+        .serviceBody_2 {
+            @extend .setviceBodyStyle;
+            background-image: url(./../assets/images/bg_blok2.png);
+        }
+
+        .serviceBody_3 {
+            @extend .setviceBodyStyle;
+            background-image: url(./../assets/images/bg_blok3.png);
+        }
+
+        .serviceBody_4 {
+            @extend .setviceBodyStyle;
+            background-image: url(./../assets/images/bg_blok4.png);
+        }
+    }
+
+}
